@@ -375,12 +375,12 @@ header .burger_icon {
 }
 
 /* Media query for responsiveness */
-@media (max-width: 768px) {
+
    .col-img {
       max-width: 80%; /* Adjust width for smaller screens */
       perspective: 1000px; /* Slightly reduce perspective for smaller devices */
    }
-}
+
 
 
 .col-img .hero-img-off {
