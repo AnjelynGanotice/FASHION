@@ -35,6 +35,8 @@ top: 35px; /* Push navbar below warning bar */
 left: 0;
 z-index: 1000;
 }
+@media (max-width: 767px) {
+
 
 .navbar a {
 color: white;
