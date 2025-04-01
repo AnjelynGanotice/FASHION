@@ -1514,5 +1514,4 @@ form textarea {
    display: inline-block; /* Inline block for spacing */
    text-decoration: underline; /* Underline text */
 }
-@media (max-width: 767px) {
-}
+
