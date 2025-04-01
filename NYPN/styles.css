@@ -134,3 +134,5 @@ transition: width 0.3s ease; /* Smooth transition for resizing */
     margin-right: 10px; /* Space between the logo and text */
     vertical-align: middle; /* Align image with text */
   }
+    @media (max-width: 767px) {
+    }
