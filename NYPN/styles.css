@@ -1,0 +1,258 @@
+
+body {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+.warning-bar {
+background: #4c4c4c;
+text-align: center;
+padding: 10px;
+font-size: 14px;
+color: #ffffff;
+width: 100%;
+position: fixed;
+top: 0;
+left: 0;
+z-index: 1001;
+}
+
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background: rgb(0, 0, 0);
+padding: 1px 40px;
+width: 100%;
+position: fixed;
+top: 35px; /* Push navbar below warning bar */
+left: 0;
+z-index: 1000;
+}
+
+nav a {
+    font-family: 'Poppins';
+    color: rgb(255, 249, 249) !important;
+    text-decoration: none; /* Remove default underline */
+    position: relative; /* Needed for absolute positioning of ::after */
+    text-transform: uppercase;
+    padding-bottom: 5px; /* Space between text and underline */
+    align-items: center;
+ }
+.navbar a::after {
+content: "";
+display: block;
+width: 0;
+height: 2px;
+background: white;
+transition: width 0.3s;
+position: absolute;
+left: 0;
+bottom: -3px;
+}
+
+.navbar a:hover::after {
+width: 100%;
+}
+
+
+.logo {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-style: oblique;
+    color: #5f1414;
+ }
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.hero {
+    background: url('bg.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
+position: absolute;
+bottom: 10%;
+left: 50%;
+transform: translateX(-50%);
+text-align: center;
+padding: 20px 40px;
+border-radius: 50px; /* To create an oblong shape */
+background: linear-gradient(to right, #888888, #000000); /* Gradient from gray to black */
+color: white; /* Text color */
+transition: background 0.3s ease; /* Smooth transition for the background */
+}
+
+.hero-content:hover {
+background: linear-gradient(to right, #333333, #444444); /* Change to a darker gradient on hover */
+}
+
+.hero-content h1 {
+font-size: 50px;
+font-weight: bold;
+}
+
+
+.chat-button {
+position: fixed;
+bottom: 40px; /* Adjusted to move it slightly further up */
+right: 30px; /* Adjusted to move it slightly further in */
+color: white;
+padding: 30px 50px; /* Increased padding for a bigger button */
+font-size: 40px; /* Increased font size for better visibility */
+border-radius: 10px; /* Slightly rounded corners */
+cursor: pointer;
+transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover */
+}
+
+.chat-button:hover {
+transform: scale(1.1); /* Slightly enlarge on hover */
+
+}
+
+.chat-button img {
+width: 70px; /* Adjust width to make it bigger */
+height: auto; /* Maintain aspect ratio */
+transition: width 0.3s ease; /* Smooth transition for resizing */
+}
+.logo{
+
+    width: 40px; /* Adjust the size of the logo */
+    height: auto; /* Maintain the aspect ratio */
+    margin-right: 10px; /* Space between the logo and text */
+    vertical-align: middle; /* Align image with text */
+  }
+   /* Responsive for All Devices */
+ @media screen and (max-width: 600px) {
+    .wrapper,
+    .grid-wrapper,
+    .section-heading {
+       flex-direction: column;
+       align-items: center;
+       max-width: 560px;
+       min-width: 340px;
+    }
+    .heading-one {
+       font-size: 2.6rem;
+    }
+    .heading-two {
+       font-size: 1.8rem;
+    }
+    .section-heading {
+       text-align: center;
+       align-items: center;
+    }
+    .collection .btn-section {
+       margin: var(--m-t-b);
+    }
+    .collection .btn-col {
+       margin: 5px;
+    }
+    .about .col-text {
+       align-items: center;
+       text-align: center;
+    }
+    .hero .col-text {
+       width: 100%;
+       flex: 1;
+       align-items: center;
+       text-align: center;
+    }
+    .hero .col-img {
+       flex: 1;
+    }
+    .arrival .btn {
+       width: 140px;
+       margin: var(--m-t-b);
+    }
+    form {
+       flex-direction: column;
+       gap: 10px;
+    }
+    .nav {
+       max-width: 560px;
+       min-width: 340px;
+    }
+    
+    header {
+       padding: 15px 10px;
+    }
+    .nav .nav-icon {
+       width: 100%;
+       justify-content: flex-end;
+       margin-right: 10px;
+       padding-right: 10px;
+    }
+    header .burger_icon {
+       display: block;
+    }
+    .nav nav ul {
+       position: absolute;
+       top: 155%;
+       right: -10px;
+       padding: 10px;
+       flex-direction: column;
+       width: 240px;
+       background-color: #d4d4d425;
+       display: none;
+       opacity: 0;
+    }
+    .nav nav ul.active {
+       display: flex;
+       opacity: 1;
+       animation: fadeIn .5s ease-in-out;
+    }
+    @keyframes fadeIn {
+       0% {
+          opacity: 0;
+          transform: translate(-2px);
+       }
+       100% {
+          opacity: 1;
+          transform: translate(0);
+       }
+    }
+    .nav nav ul a:hover {
+       color: var(--first-gra-clr);
+    }
+    .clr-two {
+       width: 200px;
+       height: 200px;
+    }
+    .hero .hero-img-off {
+       left: 10px;
+    }
+    .testimonial .wrapper {
+       width: 99%;
+    }
+    .subscribe .wrapper {
+       width: 99%;
+    }
+    .subscribe .wrapper input {
+       width: 70%;
+       border-radius: 4px;
+    }
+    .subscribe .wrapper .btn {
+       border-radius: 4px;
+    }
+    footer .wrapper {
+       align-items: center;
+       justify-content: center;
+       gap: 40px;
+    }
+    footer .col {
+       width: 100%;
+       text-align: center;
+       align-self: center;
+       justify-self: center;
+    }
+ }

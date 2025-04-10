@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" href="logo.jpg">
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="styles.css">
+   <script src="cart.js" defer></script>
+   <title>NYPN</title>
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+
+    display: flex;
+  flex-direction: column;
+  background: url('bg.jpg') no-repeat center center/cover;
+  justify-content: space-between; /* This ensures the footer stays at the bottom */
+  color: #fff8f8; /* White text */
+}
+
+* {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: url('bg.jpg') no-repeat center center/cover;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .form-container {
+      background: rgba(220, 220, 220, 0.95);
+      padding: 40px;
+      border-radius: 12px;
+      width: 350px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    .input-group label {
+      font-size: 14px;
+      margin-bottom: 5px;
+      color: #555;
+      display: block;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #bbb;
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .input-group input:focus {
+      border-color: #888;
+      outline: none;
+    }
+
+    .form-btn {
+      width: 100%;
+      padding: 10px;
+      background: #333;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .form-btn:hover {
+      background: #555;
+    }
+
+    .toggle-link {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .toggle-link a {
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .toggle-link a:hover {
+      text-decoration: underline;
+    }
+
+    .message {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+      color: red;
+    }
+
+    .hidden {
+      display: none;
+    }
+@media (max-width: 600px) {
+    .form-container {
+        width: 90%;
+    }
+}
+
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+        }
+
+        .warning-bar {
+    background: #4c4c4c;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    color: #ffffff;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(0, 0, 0);
+    padding: 1px 40px;
+    width: 100%;
+    position: fixed;
+    top: 35px; /* Push navbar below warning bar */
+    left: 0;
+    z-index: 1000;
+}
+
+        .navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    position: relative;
+}
+
+.navbar a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .hero {
+            background: url('bg.jpg') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 20px 40px;
+    border-radius: 50px; /* To create an oblong shape */
+    background: linear-gradient(to right, #888888, #000000); /* Gradient from gray to black */
+    color: white; /* Text color */
+    transition: background 0.3s ease; /* Smooth transition for the background */
+}
+
+.hero-content:hover {
+    background: linear-gradient(to right, #333333, #444444); /* Change to a darker gradient on hover */
+}
+
+.hero-content h1 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+
+.chat-button {
+    position: fixed;
+    bottom: 40px; /* Adjusted to move it slightly further up */
+    right: 30px; /* Adjusted to move it slightly further in */
+    color: white;
+    padding: 30px 50px; /* Increased padding for a bigger button */
+    font-size: 40px; /* Increased font size for better visibility */
+    border-radius: 10px; /* Slightly rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover */
+}
+
+.chat-button:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    
+}
+
+.chat-button img {
+    width: 70px; /* Adjust width to make it bigger */
+    height: auto; /* Maintain aspect ratio */
+    transition: width 0.3s ease; /* Smooth transition for resizing */
+}
+.form-container {
+    background-color: #e8e8e8b9; /* Dark grey form background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255); /* White heading */
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #0f0f0f; /* Grey border */
+    border-radius: 5px;
+    background: #ffffff; /* Dark input fields */
+    color: rgb(0, 0, 0); /* White text */
+}
+
+.input-group input::placeholder {
+    color: #aaa; /* Light grey placeholder */
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #fff; /* White button */
+    color: #ffffff; /* Black text */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #585858;
+}
+
+.switch-form {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.switch-form a {
+    color: #bbb; /* Light grey links */
+    text-decoration: none;
+}
+
+.switch-form a:hover {
+    text-decoration: underline;
+}
+
+.register-box {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .form-container {
+        width: 90%;
+    }
+}
+
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+/* Footer styles */
+.footer {
+  background-color: #fdfdfd;
+  color: #fff3dc;
+  padding: 40px 20px 20px;
+  position: relative; /* Ensures that footer is at the bottom */
+  width: 100%;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-logo h2 {
+  font-family: 'Georgia', serif;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #fff3dc;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 180px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.footer-column h4,
+.footer-column ul li a {
+  color: #fff3dc;
+}
+
+.footer-bottom {
+  border-top: 1px solid #8d5c44;
+  padding-top: 15px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.footer-bottom .links a {
+  margin: 0 10px;
+  color: #fff3dc;
+  text-decoration: none;
+}
+
+.footer-bottom .links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-column {
+    width: 100%;
+  }
+
+  .footer-bottom .links {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+* {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+  
+      body {
+        background: url('bg.jpg') no-repeat center center/cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+  
+      .login-container {
+        background: #dcdcdc;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        width: 350px;
+      }
+  
+      .login-container h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        color: #333;
+      }
+  
+      .input-group {
+        margin-bottom: 20px;
+      }
+  
+      .input-group label {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 5px;
+        color: #555;
+      }
+  
+      .input-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #bbb;
+        border-radius: 8px;
+        background: #fff;
+      }
+  
+      .input-group input:focus {
+        border-color: #888;
+        outline: none;
+      }
+  
+      .login-btn {
+        width: 100%;
+        padding: 10px;
+        background: #333;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.3s ease;
+      }
+  
+      .login-btn:hover {
+        background: #555;
+      }
+  
+      .footer {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 13px;
+        color: #777;
+      }
+  
+      .footer a {
+        color: #555;
+        text-decoration: none;
+      }
+  
+      .footer a:hover {
+        text-decoration: underline;
+      }
+
+</style> 
+
+</head>
+
+
+<body>
+
+  <div class="warning-bar">
+    WARNING: This product contains nicotine. Nicotine is an addictive chemical. Strictly for 18+.
+</div>
+
+<nav class="navbar">
+    <div class="logo"> <a href="index.html" class="logo" style="display: flex; flex-direction: column; align-items: center; text-decoration: none;">
+        <img src="logo.jpg" alt="NYPN Logo" style="height: 75px;">
+
+</div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="pod_kits.html">Pod Kits</a>
+        <a href="e-juice.html">E-Juice</a>
+        <a href="dispo.html">Disposable Vape</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="promo.html">Promo</a>
+       
+
+    </div>
+    <div>
+        <a href="loginregister.html">
+            <img src="profilelogo.jpg" alt="Logo" class="logo">
+        </a>
+        <a href="cart.html" class="cart">
+            🛒 Cart <span class="cart-count">0</span>
+
+    </div>
+</nav>
+<br>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</a>
+  <body>
+  
+    <div class="form-container">
+      <!-- Login Form -->
+      <form id="loginForm">
+        <h2>Login</h2>
+        <div class="input-group">
+          <label for="login-username">Username</label>
+          <input type="text" id="login-username" placeholder="Enter username" />
+        </div>
+        <div class="input-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" placeholder="Enter password" />
+        </div>
+        <button type="submit" class="form-btn">Login</button>
+        <div class="message" id="login-message"></div>
+        <div class="toggle-link">
+          Don't have an account? <a href="#" onclick="toggleForm('signup')">Sign up</a>
+        </div>
+      </form>
+  
+      <!-- Sign Up Form -->
+      <form id="signupForm" class="hidden">
+        <h2>Sign Up</h2>
+        <div class="input-group">
+          <label for="signup-username">Username</label>
+          <input type="text" id="signup-username" placeholder="Choose a username" />
+        </div>
+        <div class="input-group">
+          <label for="signup-password">Password</label>
+          <input type="password" id="signup-password" placeholder="Create password" />
+        </div>
+        <div class="input-group">
+          <label for="signup-confirm">Confirm Password</label>
+          <input type="password" id="signup-confirm" placeholder="Confirm password" />
+        </div>
+        <button type="submit" class="form-btn">Sign Up</button>
+        <div class="message" id="signup-message"></div>
+        <div class="toggle-link">
+          Already have an account? <a href="index.html" onclick="toggleForm('login')">Login</a>
+        </div>
+      </form>
+    </div>
+  
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<br>
+
+      <hr>
+      <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-logo">
+            <h2>NYPN'S <br> VAPE SHOP</h2>
+          </div>
+      
+          <div class="footer-column">
+            <h4>About Us</h4>
+            <ul>
+              <li><a href="#">Our Heritage</a></li>
+              <li><a href="#">Our Company</a></li>
+              <li><a href="#">Coffeehouse</a></li>
+            </ul>
+          </div>
+      
+          <div class="footer-column">
+            <h4>Responsibility</h4>
+            <ul>
+              <li><a href="#">Community</a></li>
+              <li><a href="#">Ethical Sourcing</a></li>
+              <li><a href="#">Environment</a></li>
+              <li><a href="#">Diversity</a></li>
+            </ul>
+          </div>
+      
+          <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Season's Gifting</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Customer Service</a></li>
+              <li><a href="#">Delivery</a></li>
+            </ul>
+          </div>
+      
+          <div class="footer-column social">
+            <h4>Social Media</h4>
+            <div class="footer-links">
+                <a href="https://www.facebook.com/nyoponi" target="_blank" class="fb-link">
+                    <img src="fb.jpg" alt="Facebook Logo" class="fb-logo">
+                </a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nypnvapeshop@gmail.com" target="_blank" class="email-link">
+                    <img src="email.jpg" alt="Email Logo" class="email-logo">
+                </a>
+            </div>
+            <h4>Downloads</h4>
+            <div class="downloads">
+              <a href="https://play.google.com/store/games"><i class="fab fa-google-play"></i></a>
+              <img src="playstore.jpg" alt="Facebook Logo" class="fb-logo">
+              <img src="appstore.jpg" alt="Facebook Logo" class="fb-logo">
+              <a href="https://www.apple.com/ph/app-store/"><i class="fab fa-app-store-ios"></i></a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          <div class="links">
+            <a href="#">Web Accessibility</a>
+            <a href="#">Privacy Statement</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Contact Us</a>
+          </div>
+          <p>&copy; 2025 NYPN Vape Shop. All rights reserved.</p>
+        </div>
+      </footer>
+      
+         </section>
+          <script src="main.js"></script>
+          <script>
+            const loginForm = document.getElementById('loginForm');
+            const signupForm = document.getElementById('signupForm');
+            const loginMessage = document.getElementById('login-message');
+            const signupMessage = document.getElementById('signup-message');
+        
+            // Fake users DB (for demo purposes only)
+            let users = {
+              'admin': 'admin123'
+            };
+        
+            // Toggle between forms
+            function toggleForm(type) {
+              if (type === 'signup') {
+                loginForm.classList.add('hidden');
+                signupForm.classList.remove('hidden');
+                loginMessage.textContent = '';
+              } else {
+                signupForm.classList.add('hidden');
+                loginForm.classList.remove('hidden');
+                signupMessage.textContent = '';
+              }
+            }
+        
+            // Login handler
+            loginForm.addEventListener('submit', function(e) {
+              e.preventDefault();
+              const username = document.getElementById('login-username').value.trim();
+              const password = document.getElementById('login-password').value.trim();
+        
+              if (!username || !password) {
+                loginMessage.textContent = 'Please fill in both fields.';
+                return;
+              }
+        
+              if (users[username] && users[username] === password) {
+                loginMessage.style.color = 'green';
+                loginMessage.textContent = 'Login successful!';
+                setTimeout(() => {
+                  window.location.href = 'dashboard.html';
+                }, 1000);
+              } else {
+                loginMessage.style.color = 'red';
+                loginMessage.textContent = 'Invalid credentials.';
+              }
+            });
+        
+            // Sign up handler
+            signupForm.addEventListener('submit', function(e) {
+              e.preventDefault();
+              const username = document.getElementById('signup-username').value.trim();
+              const password = document.getElementById('signup-password').value.trim();
+              const confirm = document.getElementById('signup-confirm').value.trim();
+        
+              if (!username || !password || !confirm) {
+                signupMessage.textContent = 'Please complete all fields.';
+                return;
+              }
+        
+              if (password !== confirm) {
+                signupMessage.textContent = 'Passwords do not match.';
+                return;
+              }
+        
+              if (users[username]) {
+                signupMessage.textContent = 'Username already exists.';
+                return;
+              }
+        
+              users[username] = password;
+              signupMessage.style.color = 'green';
+              signupMessage.textContent = 'Sign up successful! Redirecting to login...';
+        
+              setTimeout(() => {
+                toggleForm('login');
+              }, 1500);
+            });
+            // Login handler
+loginForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const username = document.getElementById('login-username').value.trim();
+  const password = document.getElementById('login-password').value.trim();
+
+  if (!username || !password) {
+    loginMessage.textContent = 'Please fill in both fields.';
+    return;
+  }
+
+  if (users[username] && users[username] === password) {
+    loginMessage.style.color = 'green';
+    loginMessage.textContent = `Login successful! Logged in as ${username}`;  // Custom message with username
+    setTimeout(() => {
+      window.location.href = 'dashboard.html';  // Redirect to dashboard
+    }, 2000);  // Redirect after 2 seconds
+  } else {
+    loginMessage.style.color = 'red';
+    loginMessage.textContent = 'Invalid credentials.';
+  }
+});
+
+          </script>
+        
+       </body>
+       </html>
+       
